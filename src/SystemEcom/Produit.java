@@ -17,7 +17,7 @@ public class Produit {
 
     public void add_product() {
 
-        if (getId() == this.id){
+        if (getId() == this.id) {
             System.out.println("Produit exist");
         }
         System.out.println("id :" + id + "\tName : " + nom + "\tdescription : " + description + "\tPrix  :"
@@ -29,8 +29,8 @@ public class Produit {
         return id;
     }
 
-    public void mettreAJourProduit(int id,String NewName, String NewDescription, Double NewPrix, int NewQuantite) {
-        if (id == this.id){
+    public void mettreAJourProduit(int id, String NewName, String NewDescription, Double NewPrix, int NewQuantite) {
+        if (id == this.id) {
             this.nom = NewName;
             this.description = NewDescription;
             this.prix = NewPrix;
@@ -39,8 +39,7 @@ public class Produit {
             System.out.println("id :" + id + "\tName : " + nom + "\tdescription : " + description + "\tPrix  :"
                     + prix + "\tStock de Quantite  :" + Quantite);
 
-        }
-        else
+        } else
             System.out.println("Erreur Input");
 
 
