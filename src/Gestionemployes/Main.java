@@ -11,30 +11,29 @@ import java.util.spi.LocaleServiceProvider;
 
 public class Main {
     public static void main(String[] args) {
-        Administrateur admin = new Administrateur();
+        Administrateur zsh = new Administrateur();
 
-        Employes emp1 = new Employes(1, "Ali", "Ahmed", "123 Street", "ali@example.com", "123456789");
-        Employes emp2 = new Employes(2, "Sara", "Mohammed", "456 Avenue", "sara@example.com", "987654321");
-        Employes tes1 = new Employes(3,"hiba","hiba","casa-fes","hiba@gmail.com","666");
-        admin.addEmp(emp1);
-        admin.addEmp(emp2);
-        admin.addEmp(tes1);
+        Employes t =  new Employes(1,"test1","azer","@gmail.com","@gmail.com","0000");
+        Employes z =  new Employes(2,"test2","azer","@gmail.com","@gmail.com","0000");
 
-        Taches task1 = new Taches("Complete formulaire", 101, new Date(), new Date());
-        Taches task2 = new Taches("Complete data", 102, new Date(), new Date());
-        Taches task3 = new Taches("Complete data", 103, new Date(), new Date());
+        zsh.addEmp(t);
+        zsh.addEmp(z);
+        zsh.idde(1);
+        zsh.idde(2);
+        Taches tt = new Taches("complete formulaire Google",1,new Date(),new Date(),"pas ");
+        Taches zz = new Taches("organigramme",1,new Date(),new Date(),"pas");
 
-        admin.assignTache(emp1, task1);
-        admin.assignTache(emp2, task2);
-        admin.assignTache(tes1, task3);
+        zsh.assignTache(t,tt);
 
-        admin.getEmp();
+        zsh.assignTache(z,zz);
 
-        admin.afficheTaches();
-        //test
-        Employes updatedEmp1 = new Employes(1, "Ali", "Hassan", "789 Road", "ali_new@example.com", "111222333");
-        admin.updateEmp(1, updatedEmp1);
-        admin.getEmp();
+        zsh.afficheTaches();
+        z.updateStatus(1, Taches.STATUS_EN_COURS);
+        Employes ttt =  new Employes(1,"test1","HHH","@gmail.com","@gmail.com","0000");
+        zsh.updateEmp(1,ttt);
+        System.out.println("------");
+        zsh.idde(1);
+
 
     }
 }

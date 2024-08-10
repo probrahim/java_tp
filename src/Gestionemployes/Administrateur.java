@@ -7,7 +7,7 @@ public class Administrateur {
     public List<Employes> Emp;
 
     public Administrateur() {
-        this.Emp = new ArrayList<>();
+        this.Emp = new ArrayList<Employes>();
     }
 
     public void addEmp(Employes emp) {
@@ -19,7 +19,14 @@ public class Administrateur {
             System.out.println(emp);
         }
     }
+    public void idde(int id) {
+        for (Employes emp : this.Emp) {
+            if ( emp.id == id){
+                System.out.println(emp);
+            }
 
+        }
+    }
     public void updateEmp(int id, Employes newEmp) {
         for (Employes emp : this.Emp) {
             if (emp.id == id) {
@@ -29,6 +36,7 @@ public class Administrateur {
                 emp.telephone = newEmp.telephone;
                 emp.email = newEmp.email;
             }
+            // System.out.println("\tnom :"+emp.nom + "\tprenom :"+emp.prenom + "\taddresse :"+emp.adresse + "\ttelephone :"+emp.telephone); ;
         }
     }
 

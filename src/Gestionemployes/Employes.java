@@ -22,6 +22,20 @@ public class Employes {
         this.tachesAttribuees = new ArrayList<>();
     }
 
+    public void updateStatus(int Tid, String status) {
+        for (Taches t : tachesAttribuees) {
+            if (t.id == Tid) {
+                t.setStatus(status);
+                System.out.println("----- STATUS DE TACHE -----");
+                System.out.println("Status de tache :\t" + t.nomT + "\tUpdate effectuee" + t.getStatus());
+                return;
+            }
+        }
+        System.out.println("non trouve");
+
+    }
+
+
     @Override
     public String toString() {
         return "Employes{" +
@@ -31,6 +45,7 @@ public class Employes {
                 ", adresse='" + adresse + '\'' +
                 ", email='" + email + '\'' +
                 ", telephone='" + telephone + '\'' +
+                ", tachesAttribuees=" + tachesAttribuees +
                 '}';
     }
 }
