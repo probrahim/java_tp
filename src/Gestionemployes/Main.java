@@ -1,6 +1,5 @@
 package Gestionemployes;
 
-import SystemEcom.Admin;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class Main {
 
         Employes t =  new Employes(1,"test1","azer","@gmail.com","@gmail.com","0000");
         Employes z =  new Employes(2,"test2","azer","@gmail.com","@gmail.com","0000");
-
+        
         zsh.addEmp(t);
         zsh.addEmp(z);
         zsh.idde(1);

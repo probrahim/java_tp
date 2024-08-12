@@ -30,6 +30,7 @@ public class Administrateur {
     public void updateEmp(int id, Employes newEmp) {
         for (Employes emp : this.Emp) {
             if (emp.id == id) {
+
                 emp.nom = newEmp.nom.toUpperCase();
                 emp.prenom = newEmp.prenom;
                 emp.adresse = newEmp.adresse;
