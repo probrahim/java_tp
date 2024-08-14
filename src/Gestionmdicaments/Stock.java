@@ -65,8 +65,8 @@ public class Stock {
         }
     }
     public void raport(){
-        for (StockReception recptio : stockk) {
-            recptio.getMedicament().afficheMedicament();
+        for (StockReception t:stockk){
+            System.out.println(t);
         }
     }
 }

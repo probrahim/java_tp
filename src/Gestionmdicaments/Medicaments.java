@@ -83,13 +83,15 @@ public class Medicaments {
     }
 
     public void ajouterMedicament(Medicaments medicament) {
-        if ( medicament.getQuantite() < 0){
-            medicament.setQuantite(medicament.getQuantite()*-1);
+        if ( medicament.getQuantite() > 0){
+           // medicament.setQuantite(medicament.getQuantite());
+            if (ensembleMED == null) {
+                ensembleMED = new ArrayList<>();
+            }
+            ensembleMED.add(medicament);
         }
-        if (ensembleMED == null) {
-            ensembleMED = new ArrayList<>();
-        }
-        ensembleMED.add(medicament);
+        else
+            System.out.println("!!--QUANTITE INCORECT--!!");
     }
 
     public void afficheMedicament() {
