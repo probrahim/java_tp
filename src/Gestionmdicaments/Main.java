@@ -10,13 +10,36 @@ public class Main {
         final String GREEN = "\033[0;32m"; // Vert
         final String YELLOW = "\033[0;33m"; // Jaune
         final String BLUE = "\033[0;34m"; // Bleu
-        Medicaments z =  new Medicaments(1,"paracetamol","20mg",500.45,-5);
+        Medicaments z =  new Medicaments(1,"paracetamol","20mg",500.45,100);
+        // duplica mise a jour
+       // Medicaments zUpdate =  new Medicaments(1,"paracetamol","10mg",300.45,20);
         Medicaments up =  new Medicaments(2,"paracetamol","40mg",300.45,20);
-        Medicaments p =  new Medicaments(3,"amoxil","50mg",250.45,100);
+    //    Medicaments p =  new Medicaments(3,"amoxil","50mg",250.45,100);
+
+        Medicaments y =  new Medicaments(4,"doli","30mg",350.5,30);
         Medicaments x =  new Medicaments();
+
         x.ajouterMedicament(z);
-        x.ajouterMedicament(p);
+//        x.updateMedicament("paracetamol",zUpdate);
+    //    x.ajouterMedicament(p);
         x.afficheMedicament();
+        x.updateMedicament("paracetamol",y);
+        // faire supprimer un medicament dans notre systeme:
+        //x.supprimerMedicament();
+        x.afficheMedicament();
+
+
+        Stock ps = new Stock();
+        ps.enregistrerReception(1,z,LocalDate.now(),2);
+        ps.enregistrerReception(1,z,LocalDate.now(),30);
+        ps.checkStock(1);
+        ps.venteStock(1,30);
+        ps.venteStock(1,30);
+        ps.afficheHistorique();
+
+
+        System.out.println("-----/////----");
+        ps.stockanow(z);
 
 
         // afficher la lsit des medicament

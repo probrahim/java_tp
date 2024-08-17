@@ -2,7 +2,9 @@ package Gestionmdicaments;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Stock {
     private List<StockReception> stockk;
@@ -55,6 +57,26 @@ public class Stock {
             }
         }
     }
+    public void stockanow(Medicaments medicaments) {
+        // Créer un dictionnaire pour stocker les quantités actuelles par nom de médicament
+        Map<String, Integer> stockMap = new HashMap<>();
+
+        // Parcourir les enregistrements du stock et accumuler les quantités pour le médicament spécifié
+        for (StockReception recptio : stockk) {
+            String medicament = recptio.getMedicament().getNomMedicament();
+            if (medicament.equals(medicaments)) {
+                int quantite = recptio.getQantite();
+                stockMap.put(medicament, stockMap.getOrDefault(medicament, 0) + quantite);
+            }
+        }
+
+        // Afficher le rapport pour le médicament spécifié
+        System.out.println("--- Rapport de Stock pour " + medicaments + " ---");
+            for (Map.Entry<String, Integer> entry : stockMap.entrySet()) {
+                System.out.println("Médicament: " + entry.getKey() + ", Quantité en stock: " + entry.getValue());
+            }
+    }
+
     public void receptionStock (int valeur,int quantite){
         for (StockReception recptio : stockk) {
             if (recptio.getId() == valeur) {
