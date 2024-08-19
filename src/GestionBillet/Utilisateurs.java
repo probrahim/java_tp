@@ -1,5 +1,6 @@
 package GestionBillet;
 
+import Gestion_courses.Eventmanage;
 import Gestionmdicaments.Medicaments;
 
 import java.util.ArrayList;
@@ -10,12 +11,16 @@ public class Utilisateurs {
     private String eamil;
     private int code;
     private List<Utilisateurs> utilisateurs;
+    List<Eventmanage> events;
+    boolean TF = false;
 
     public Utilisateurs(String nom, String eamil, int code) {
         this.nom = nom;
         this.eamil = eamil;
         this.code = code;
         this.utilisateurs = new ArrayList<Utilisateurs>();
+        this.TF = false;
+        this.events = new ArrayList<>();
     }
 
 
@@ -58,15 +63,23 @@ public class Utilisateurs {
             System.out.println("NAME :"+u.getNom()+" "+"EMAIL"+u.getEamil()+"CODE"+" "+u.getCode());
         }
     }
-    public void login(Utilisateurs utilisateur){
-        for(Utilisateurs u : utilisateurs){
-            if ( u.eamil == utilisateur.getEamil() && u.code == utilisateur.getCode()){
+    public void login(Utilisateurs utilisateur) {
+        boolean loggedIn = false;
+        for (Utilisateurs u : utilisateurs) {
+            if (u.getEamil().equals(utilisateur.getEamil()) && u.getCode() == utilisateur.getCode()) {
                 System.out.println("LOGIN SUCCESS");
+                loggedIn = true;
+                break; // Sortir de la boucle une fois la correspondance trouvée
             }
-            else
-                System.out.println("DONNER INCORECT ");
         }
-
+        if (!loggedIn) {
+            System.out.println("DONNEES INCORRECTES");
+        }
+    }
+    public void buy(Utilisateurs utilisateur,int place,String nameEvent) {
+        for (Eventmanage em : events) {
+            System.out.println(em);
+        }
     }
 
     @Override
